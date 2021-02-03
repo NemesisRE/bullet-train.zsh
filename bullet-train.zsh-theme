@@ -567,7 +567,7 @@ prompt_kctx() {
     if [[ "$BULLETTRAIN_KCTX_NAMESPACE" == "true" ]]; then
       jsonpath="${jsonpath}{':'}{..namespace}"
     fi
-    if kubectl config view --minify --output "jsonpath=${jsonpath}" 2&>1 >/dev/null; then
+    if kubectl config view --minify --output "jsonpath=${jsonpath}" 2>&1 >/dev/null; then
       prompt_segment $BULLETTRAIN_KCTX_BG $BULLETTRAIN_KCTX_FG $BULLETTRAIN_KCTX_PREFIX" $(kubectl config view --minify --output "jsonpath=${jsonpath}" 2>/dev/null)"
     fi
   elif [[ -f $BULLETTRAIN_KCTX_KCONFIG ]]; then
