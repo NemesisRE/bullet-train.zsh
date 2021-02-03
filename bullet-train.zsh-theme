@@ -571,7 +571,7 @@ prompt_kctx() {
       prompt_segment $BULLETTRAIN_KCTX_BG $BULLETTRAIN_KCTX_FG $BULLETTRAIN_KCTX_PREFIX" $(kubectl config view --minify --output "jsonpath=${jsonpath}" 2>/dev/null)"
     fi
   elif [[ -f $BULLETTRAIN_KCTX_KCONFIG ]]; then
-    if [[ $(cat $BULLETTRAIN_KCTX_KCONFIG | grep current-context | awk '{print $2}')" != '""' ]]; then
+    if [[ $(cat $BULLETTRAIN_KCTX_KCONFIG | grep current-context | awk '{print $2}') != '""' ]]; then
       prompt_segment $BULLETTRAIN_KCTX_BG $BULLETTRAIN_KCTX_FG $BULLETTRAIN_KCTX_PREFIX" $(cat $BULLETTRAIN_KCTX_KCONFIG | grep current-context | awk '{print $2}')"
     fi
   fi
